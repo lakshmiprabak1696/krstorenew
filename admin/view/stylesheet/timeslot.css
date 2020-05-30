@@ -1,0 +1,8 @@
+#error_msg_exc{
+display: none;
+}    
+li.list {
+   list-style: none;
+    display: -webkit-box;
+    padding-left: 21px;
+}

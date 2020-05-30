@@ -1,0 +1,56 @@
+/************************************************************************************************
+    FOOTER DEFFAULT
+*************************************************************************************************/
+
+footer{ 
+  @include rem(font-size, 13px); color: #666;
+  a{ color: #444; }
+  .module{ margin: 0; 
+    h3.modtitle,
+      h3.footer-title{
+        @include rem(font-size, 18px); font-weight: bold; border: none; color: #222; 
+        text-transform: uppercase; margin: 0 0 15px 0; line-height: inherit; height: auto;
+      }
+    }
+
+  /*FOOTER TOP*/
+  .footer-top {  background-color: #222;  height: 70px; }
+
+  /*FOOTER CENTER*/
+  .footer-center{padding-bottom: 30px; padding-top: 25px; background-color: #eee;
+    .module h3.modtitle:before{ display: none; }
+    .module{
+      .footer-logo{margin-bottom: 7px; margin-top: -3px;}
+      ul.menu{ 
+         li a{
+          position: relative;
+          padding-#{$left}: 10px;
+          @include if-rtl {
+            &:before{ content: "\f100"!important; font-family: FontAwesome}
+          }
+          &:before{content: "\f101"; top: 2px; line-height: 100%; vertical-align: middle; font-family: FontAwesome; position: absolute; #{$left}: 0;}
+          &:hover{  color: $linkColor; } 
+         }
+      }
+    }
+   
+    .contact-address{
+        li{color: #444444;padding: side-values(0 0 5px 25px) ;position: relative;z-index: 1;line-height: 18px;}
+        span{font-size: 15px;position: absolute;color: white; text-align: center;color: $linkColor; #{$left}: 0px;margin-#{$right}: 10px;
+        }
+         > li:nth-child(2) {padding-top: 7px;
+         span{margin-top: -1px;}
+      }
+        > li:last-child{padding-top: 8px;}
+        a:hover{color: $linkColor;}
+    }
+
+  }
+  .box-footer{min-height: 181px; 
+    .module{margin: 0;}
+    li{line-height: 32px;}
+   
+  }
+  
+
+}

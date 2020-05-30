@@ -1,0 +1,104 @@
+2020-02-25 4:48:25 - 
+
+MOD: Simple Blog
+NOT FOUND!
+CODE: $categories = $this->model_catalog_category->getCategories(0);
+FILE: catalog/controller/common/header.php
+
+
+MOD: Open SendGrid
+NOT FOUND!
+CODE: $mail = new Mail($this->config->get('config_mail_engine'));
+FILE: catalog/model/account/customer.php
+
+
+MOD: Open SendGrid
+NOT FOUND!
+CODE: $mail = new Mail($this->config->get('config_mail_engine'));
+FILE: catalog/model/account/customer_group.php
+
+
+MOD: Open SendGrid
+NOT FOUND!
+CODE: $mail = new Mail($this->config->get('config_mail_engine'));
+FILE: catalog/model/account/order.php
+
+
+MOD: Open SendGrid
+NOT FOUND!
+CODE: $mail = new Mail($this->config->get('config_mail_engine'));
+FILE: catalog/model/checkout/order.php
+----------------------------------------------------------------
+MOD: Open SendGrid
+MISSING FILE!
+C:/xampp7/htdocs/indiapackage/catalog/model/account/quicksignup.php
+----------------------------------------------------------------
+MOD: Open SendGrid
+MISSING FILE!
+C:/xampp7/htdocs/indiapackage/catalog/controller/affiliate/forgotten.php
+
+
+MOD: Open SendGrid
+NOT FOUND!
+CODE: $mail = new Mail($this->config->get('config_mail_engine'));
+FILE: catalog/controller/account/forgotten.php
+
+
+MOD: Open SendGrid
+NOT FOUND!
+CODE: $mail = new Mail($this->config->get('config_mail_engine'));
+FILE: admin/controller/common/forgotten.php
+
+
+MOD: Open SendGrid
+NOT FOUND!
+CODE: $mail = new Mail($this->config->get('config_mail_engine'));
+FILE: admin/model/customer/customer.php
+----------------------------------------------------------------
+MOD: Open SendGrid
+MISSING FILE!
+C:/xampp7/htdocs/indiapackage/catalog/model/affiliate/affiliate.php
+
+
+MOD: Open SendGrid
+NOT FOUND!
+CODE: $mail = new Mail($this->config->get('config_mail_engine'));
+FILE: admin/model/sale/return.php
+
+
+MOD: Open SendGrid
+NOT FOUND!
+CODE: $mail = new Mail($this->config->get('config_mail_engine'));
+FILE: admin/model/sale/voucher.php
+----------------------------------------------------------------
+MOD: Open SendGrid
+MISSING FILE!
+C:/xampp7/htdocs/indiapackage/catalog/controller/total/voucher.php
+----------------------------------------------------------------
+MOD: Open SendGrid
+MISSING FILE!
+C:/xampp7/htdocs/indiapackage/admin/model/marketing/affiliate.php
+
+
+MOD: Open SendGrid
+NOT FOUND!
+CODE: $mail = new Mail($this->config->get('config_mail_engine'));
+FILE: catalog/controller/rest/contact.php
+
+
+MOD: Open SendGrid
+NOT FOUND!
+CODE: $mail = new Mail($this->config->get('config_mail_engine'));
+FILE: catalog/model/extension/openbay/ebay_order.php
+
+
+MOD: Open SendGrid
+NOT FOUND!
+CODE: $mail = new Mail($this->config->get('config_mail_engine'));
+FILE: catalog/model/extension/payment/amazon_login_pay.php
+
+
+MOD: Open SendGrid
+NOT FOUND!
+CODE: $mail = new Mail($this->config->get('config_mail_engine'));
+FILE: catalog/model/extension/payment/squareup.php

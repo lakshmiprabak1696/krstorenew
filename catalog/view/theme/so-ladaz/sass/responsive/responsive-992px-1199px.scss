@@ -1,0 +1,63 @@
+ @include breakpoint(md){
+ 
+    //SHOW MORE Footer
+    footer #collapse-footer{max-height: 100%;
+        &:before{display:none;}
+    }
+    /* ***********************************************************************************************
+        BLOCK HEADER  
+    *************************************************************************************************/
+    
+    /************************************************************************************************
+        PAGE LISTING  
+    *************************************************************************************************/
+    #wrapper{ overflow-x: hidden; }
+    .thumb-vertical-outer { padding: 20px 0;}
+    .related-products .image, div.so-extraslider.grid .image{ width: 40%;}
+    div.products-list.grid .product-layout .product-item-container{
+        .left-block .quickview,
+        .button-group button{opacity: 1;}
+    }
+    .producttab .tabsslider .nav-tabs li a{ padding: 10px; }
+
+    .module.so_filter_wrap .modcontent .so-filter-content-opts-container .put-min_max{
+        width: 100%;
+        margin-bottom: 5px;
+    }
+
+    .product-listing .products-list .product-grid .product-item-container .right-block{
+        //min-height: 140px;
+    }
+    /************************************************************************************************
+        PAGE DETAIL  
+    *************************************************************************************************/
+
+    .content-aside .module h3.modtitle span{
+        font-size: 17px;
+    }
+    .product-view .content-product-right .share .socials-wrap ul li{
+        margin-#{$left}: 25px;
+    }
+    .upsell-sidebar.product-simple .so-extraslider .extraslider-inner .item .item-inner{
+        .item-image{
+            width: 80px;
+        }
+        .item-info{
+            margin-left: 95px;
+            .price .price-old{
+                padding: 0;
+                font-size: 12px;
+            }
+        }
+    } 
+    .upsell-sidebar h3.modtitle{
+        padding-#{$left}: 5px;
+    }
+    .upsell-sidebar .so-extraslider .owl2-controls .owl2-nav{
+        #{$right}: 5px;
+    }
+
+    
+    
+}
+

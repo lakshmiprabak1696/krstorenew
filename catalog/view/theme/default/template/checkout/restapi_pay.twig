@@ -1,0 +1,34 @@
+{% if redirect is not defined or redirect is empty %}
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" type="text/css" href="../../catalog/view/theme/default/stylesheet/stylesheet.css"/>
+    {% for style in styles %}
+        <link rel="{{ style.rel }}" type="text/css" href="{{ style.href }}" media="{{ style.media }}"/>
+    {% endfor %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    {% for script in scripts %}
+        <script type="text/javascript" src="{{ script }}"></script>
+    {% endfor %}
+
+    <div class="payment" {% if autosubmit %} style="visibility: hidden" {% endif %}>{{ payment }}</div>
+
+    {% if autosubmit %}
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $(".btn").click();
+                if ($('.btn').attr('href')) {
+                    window.location.href = $('.btn').attr('href');
+                }
+            });
+        </script>
+    {% else %}
+        <script type="text/javascript">
+            $('.checkout-content').slideDown(0);
+        </script>
+    {% endif %}
+{% else %}
+    <script type="text/javascript"><!--
+    location = '{{ redirect }}';
+    //--></script>
+{% endif %}
