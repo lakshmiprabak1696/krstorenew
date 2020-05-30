@@ -1,0 +1,64 @@
+<style type="text/css">
+    .slider-example {
+        padding-top: 10px;
+        padding-bottom: 55px;
+        margin: 35px 0;
+    }
+</style>
+{% if min_max != 0 %}
+    <div class="box sidebarFilter panel panel-default"{% if module_price_filter_status and module_price_filter_status == 0 %} style="display: none;" {% endif %} >
+        <div class="panel-heading"><button onclick="$('.clse1').toggle();"><i class="fa fa-angle-down"></i></button>{{ price_slider_title }}<button onclick="$('.clse1').hide();"><i class="fa fa-close" aria-hidden="true"></i></button></div>
+        <div class="list-group">
+            <div class="list-group-item price-filter">
+                <div id="filter-group1" class="clse1"><span class="min-amount">{{ price_min }}</span><span
+                            class="max-amount">{{ price_max }}</span>
+                    <input id="price-slider" onchange="buttonFilter();" type="text" class="span2" value=""
+                           data-slider-min="{{ price_range_min }}" data-slider-max="{{ price_range_max }}"
+                           data-slider-step="2"
+                           data-slider-value="[{{ (price_range[0] is defined and price_range[0] != '')? price_range[0]: price_range_min }},{{ (price_range[1] is defined and price_range[1] != '')? price_range[1]: price_range_max }}]"/>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endif %}
+<script>
+
+    $("#price-slider").slider({
+        range: true,
+        min: {{ price_range_min }},
+        max: {{ price_range_max }},
+        values: [75, 300],
+        slide: function (event, ui) {
+            $("#amount").val("$" + ui.values[0] + " - $" + ui.values[1]);
+        }
+    });
+
+    /*<div class="panel-footer text-right">
+      <button type="button" id="button-filter" class="btn btn-primary">{{ button_filter }}</button>
+</div>*/
+
+    function buttonFilter() {
+        pr = '';
+        price = $('#price-slider').val();
+        if (price != '') {
+            pr = "&pr=" + price;
+        }
+        location = "{{ action }}" + pr;
+    }
+
+    /* $( document ).ready( function () {
+
+         $('#button-filter').on('click', function() {
+             console.log("asdfsd");
+             pr = '';
+             price = $('#price-slider').val();
+             if(price!='')
+             {
+                 pr = "&pr="+price;
+             }
+             location = "{{ action }}"+pr;
+        });
+    });*/
+
+
+</script>
