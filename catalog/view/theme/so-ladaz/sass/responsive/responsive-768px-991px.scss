@@ -1,0 +1,78 @@
+@include breakpoint(sm){
+    #wrapper{overflow: hidden;}
+    .common-home { 
+        .container{
+            overflow: visible;
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+    }
+
+    /************************************************************************************************
+        SHOW MORE CONTENT
+    *************************************************************************************************/
+    
+    
+	/************************************************************************************************
+        BLOCK HEADER  
+    ************************************************************************************************ */
+       
+
+    /*=== MENU ===*/
+    #menu .navbar-collapse{padding: 0;}
+    #menu .navbar-collapse .navbar-nav > li > a{padding: 0 10px;}
+    /* **********************************************************************************************
+        BLOCK HOME PAGE
+    *************************************************************************************************/
+   
+    /* ***********************************************************************************************
+        BLOCK FOOTER  
+    *************************************************************************************************/
+    footer.typefooter-1 .footer-navbar .footer-center .box-footer-sp:before{display: none;}
+    .footer-bottom-pt{
+        .text-right,.copyright-text{ text-align: center; }
+    }
+    /************************************************************************************************
+        PAGE LISTING  
+    ************************************************************************************************ */
+    
+    aside.left_column{
+        margin-bottom: 30px;
+    }
+    .thumb-vertical-outer { padding: 20px 0;}
+  
+    .so-filter-price .put-min_max{
+        .name-curent{ display: inline-block; float: $left; line-height: 30px; }
+        .form-control{ width: 60px; line-height: 30px; padding: 0!important; margin: 0!important; height: 30px; min-width: 60px; }
+    }
+    .product-listing .products-list .product-grid .product-item-container .right-block{
+        
+    }
+
+    /************************************************************************************************
+        PAGE DETAIL 
+    ************************************************************************************************ */
+    
+    #product-quick .product-view .content-product-right{
+        margin-top: 0px;
+    }
+
+    .product-view .content-product-right{
+        margin-top: 40px;
+    }
+  
+    
+    .product-simple .so-extraslider .extraslider-inner .item .item-inner{
+        width: 100%;
+    }
+    .content-aside .product-simple .so-extraslider .extraslider-inner .owl2-item{
+        .item{
+            display: inline-block;
+            .item-inner{
+                width: 100%;
+            }
+        } 
+    }
+
+   
+}

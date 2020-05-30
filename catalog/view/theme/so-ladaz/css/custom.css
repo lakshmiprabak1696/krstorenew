@@ -1,0 +1,15 @@
+/*Add Css Custom Here*/
+
+/*====== Fix bugs Megamenu not showing icon font (26/1/2018) =====*/
+@media (min-width: 992px){
+	.menu-vertical .container-megamenu.vertical .vertical-wrapper ul.megamenu > li > a {    padding: 9px 0; line-height: 24px; height: auto;}
+	.menu-vertical .container-megamenu.vertical .vertical-wrapper ul.megamenu > li > a i,
+	.menu-vertical .container-megamenu.vertical .vertical-wrapper ul.megamenu > li > a b {
+	    display: inline-block;
+	}
+	.menu-vertical .container-megamenu.vertical .vertical-wrapper ul.megamenu > li.with-sub-menu > a:before{display: none;}
+	.menu-vertical .container-megamenu.vertical .vertical-wrapper ul.megamenu > li > a img{position: static; transform: inherit;}
+
+}
+
+

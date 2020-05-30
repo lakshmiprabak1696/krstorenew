@@ -1,0 +1,229 @@
+
+header{
+    /* MENU ON TOP*/
+    &.navbar-compact{
+        .header-middle{
+            padding: 10px 0;
+            margin: 0;
+        }
+        
+        
+    }
+    .icon-phone{
+        width: 20px; height: 20px; float: $left; margin-#{$right}: 10px;
+        fill: #e74c3c;
+    }
+}
+
+/*============ HEADER  ==================*/
+.header-top{    font-size: 12px;border-bottom: 1px solid #ddd;
+    .list-msg {margin-top: 6px; height: 24px; overflow: hidden; 
+        .label-msg {margin: 0;display: inline-block;position: relative;color: #fff; font-weight: normal;    
+            background: #e67e22; padding: 0 10px;border-radius: 2px; line-height: 20px;  
+        }
+        a {padding: 0 6px;}
+        
+        
+        @include if-rtl {
+            direction: ltr;
+            .list-msg--item{direction: rtl;}
+        }
+    }
+    ul.top-link{list-style: none;margin:0; vertical-align:top;
+        > li{padding: 0; display: inline-block; position: relative; list-style: outside none none; border-#{$left}: 1px solid #ddd; 
+           &.currency{ border-#{$right}: 1px solid #ddd; }
+            > a {display: block; padding: 0 13px; position: relative; height: 36px; line-height: 36px; color: #444; font-size: 12px;
+                &:before{font-family: 'FontAwesome'; margin-#{$right}: 4px;}
+                    span.fa-angle-down{position: relative; #{$left}: 5px;}
+            }
+            &.account > a:before{content: "\f007";} 
+            &.wishlist{
+                a:before{content: "\f004"; }
+            }
+            &.checkout{
+                a:before{content: "\f045";}
+            }
+
+            &:hover{
+                > a{color: $linkColor;}
+            }
+            
+            .btn-group .btn-link{ padding: 3px 10px;}
+        }
+    }
+    
+   
+}
+
+.header-middle  {
+    padding: 39px 0 31px;
+    background: #fff;
+}
+
+.common-home .header-bottom-inner{border-bottom: 0;}
+.header-bottom-inner {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    
+}
+
+/* SO Search Prod*/
+.phone-contact {font-size: 12px;
+    b {
+        text-transform: uppercase; padding: 0 5px;
+    }
+}
+.header-search{display: inline-block; vertical-align: top;}
+#sosearchpro.so-search{margin: 0; width: 100%;  padding: 0; 
+    &.open{
+        .bt-search{background: $gray;
+            .fa-search:before{content:"\f00d";}
+        }
+        .dropdown-menu-search{
+            width: 300px;
+            display: block;
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+    .bt-search{
+        @include buttonColor();
+        padding: 0; 
+        border-radius: 0;
+        border: none;
+        width: 36px;
+        height: 36px;
+        line-height: 35px;
+        text-align: center;
+        color: #fff;
+        
+    }
+   
+   
+    .btn-default{ height: 30px; width:30px;padding: 0;
+        i{ font-size: 13px;     line-height: 29px;}
+    }
+    
+    .dropdown-menu-search{
+        background: #fff;
+        border: 3px solid $background;
+        display: none;
+        margin: 0;
+        padding: 0;
+        border-radius: 0;
+        top: 0;
+        #{$right}: 40px;
+        #{$left}: auto;
+        .form-control{ height: 30px; background: white; }
+        
+        
+    }
+}
+
+/* SO shopping_cart*/
+.shopping_cart{display: inline-block;
+    .btn-shopping-cart{
+        
+        .shopcart{
+            @include buttonColor();
+            padding: 0; border-radius: 0;
+            width: 35px;
+            height: 35px;
+            line-height: 35px;
+            position: relative;
+            display: inline-block;
+            text-align: center;
+            margin-#{$left}: 10px;
+        }
+      
+        .text-shopping-cart,
+        .items_cart2,
+        .items_carts{ display: none; }
+        a.top_cart{color: #fff;
+            .shopcart .total-shopping-cart{
+                position: absolute;
+                padding: 0px;
+                color: #fff;
+                font-size: 12px;
+                text-transform: uppercase;
+                font-weight: bold;
+                margin: 0;
+                width: 22px;
+                height: 22px;
+                text-align: center;
+                background: darken($background,10%);
+                line-height: 22px;
+                border-radius: 100%;
+                top: -11px;
+                overflow: hidden;
+                #{$right}: -11px;
+            }
+            
+            &:hover{
+                color: $linkColor;
+            }
+        }                     
+    } 
+    .dropdown-menu{margin: 5px 0; top: 110%;}
+    .shoppingcart-box:before{right: 5px;}
+}
+.btn-shopping-cart {
+    .dropdown-menu{
+        min-width: 320px;        
+        .cart_product_name{@include linkGray();}
+        .empty{
+            padding: 15px;
+            margin: 0;
+    
+        }
+    }
+    .table>tbody>tr>td{border: none;border-bottom: 1px solid $gray-lighter;vertical-align: middle;}
+    .checkout{padding: 0 20px 10px;}
+    .added_items{padding: 10px;}
+}   
+
+/* Main Menu*/
+#menu{ padding-top: 10px; margin-bottom: 0;  }
+
+@media (min-width: 480px){
+    #menu .dropdown .dropdown-menu {
+        #{$left}: 0; #{$right}: auto;     transform: translateY(2px); border-top: 2px solid $background;
+        min-width: 185px;
+        li a{  padding: 3px 0; display: block;
+            
+        }
+    }
+
+    #menu {
+        .see-all {
+            display: block;
+            margin-top: 0.5em;
+            border-top: 1px solid #DDD;
+            padding-top: 0.5em;
+            font-weight: bold;
+            font-size: 13px;
+            a{ color: $background; }
+        }
+        .navbar-collapse{ text-align: center;
+            .navbar-nav{ display: inline-block; float: none;
+                > li > a{
+                    border-radius: 3px;
+                    color: #222;
+                    font-size: 13px;
+                    height: auto;
+                    padding: 0px 15px;
+                    line-height: 28px;
+                    text-transform: uppercase;
+                    text-shadow: none;
+                    font-weight: bold;
+                }
+                > li:hover > a {
+                    background: #222;
+                    color: #fff;
+                   
+                }
+            }
+        }
+    }
+    
+}

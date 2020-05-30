@@ -1,0 +1,51 @@
+@include breakpoint(xs){
+    .product-image-zoom{
+        pointer-events: none;
+    }
+    #wrapper{overflow: hidden;}
+    .common-home {
+        .container{
+            overflow: visible;
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+    }
+    /************************************************************************************************
+        SHOW MORE CONTENT
+    *************************************************************************************************/
+    
+    .slide-left{padding-#{$right}: 15px;}
+    .slide-right { padding-#{$left}: 15px;}
+    footer.typefooter-1 .footer-navbar .footer-center .box-footer-sp:before{display: none;}
+    .footer-bottom-pt{
+        .text-right,.copyright-text{ text-align: center; }
+    }
+	/************************************************************************************************
+        BLOCK HEADER  
+    ************************************************************************************************ */
+    .header-bottom-inner{border: none;}
+    #sosearchpro.so-search.open .dropdown-menu-search{width: calc(100% + 30px);}
+    /*=== MENU ===*/
+    .mainmenu{ margin-bottom: 15px;
+        #category{
+            float: $left;
+            font-weight: bold;
+            text-transform: uppercase;
+            padding: 5px 10px;}
+        .navbar-toggle{float: $left; margin:0;}
+        #menu .navbar-collapse{text-align: $left;
+            ul.nav > li{width: 100%; float: left;clear: both;  border-top: 1px solid #e4e4e4;
+                > a{font-weight: bold;}
+                
+            }
+            .dropdown-menu{display: block; opacity: 1;visibility: visible;position: static;
+               
+                width: 100%;
+                box-shadow: none;
+                padding: 10px 15px;
+            }
+        }
+    }
+
+    
+}

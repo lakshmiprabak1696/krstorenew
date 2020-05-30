@@ -1,0 +1,14 @@
+@include breakpoint(lg){
+	
+	
+	//SHOW MORE Footer
+	footer #collapse-footer{max-height: 100%;
+		&:before{display:none;}
+	}
+
+	
+}
+
+
+
+
