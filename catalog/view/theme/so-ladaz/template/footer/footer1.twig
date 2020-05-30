@@ -1,0 +1,112 @@
+<footer class="footer-container typefooter-{{typefooter ? typefooter : '1'}}">
+	<div class="footer-navbar ">
+	{#======	FOOTER TOP	=======#}  
+	{% if footer_block1 is not empty %}
+	<div class="footer-top desc-collapse showdown" id="collapse-footer">
+		<div class="container">
+			<div class="row">
+				<div class="footer-left col-lg-3 col-md-3 col-sm-12 col-xs-12">
+					{{footer_block1}}
+				</div>
+				<div class="footer-right col-lg-9 col-md-9 col-sm-12 col-xs-12">
+					{{footer_block2}}
+
+					<div class="row">
+
+						<div class="col-lg-4 col-md-4 col-sm-4 box-account box-footer">
+							<div class="module clearfix">
+								<h3 class="modtitle">{{ text_account }}</h3>
+								<div  class="modcontent" >
+									<ul class="menu">
+										<li><a href="{{ account }}">{{ text_account }}</a></li>
+									  	<li><a href="{{ order }}">{{ text_order }}</a></li>
+									  	<li><a href="{{ wishlist }}">{{ text_wishlist }}</a></li>
+									  	<li><a href="{{ newsletter }}">{{ text_newsletter }}</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+
+					 	 {% if informations %}
+					  	<div class="col-lg-4 col-md-4 col-sm-4 box-information box-footer">
+					  		<div class="module clearfix">
+							<h3 class="modtitle">{{ text_information }}</h3>
+							<div  class="modcontent" >
+								<ul class="menu">
+								 	{% for information in informations %}
+								  		<li><a href="{{ information.href }}">{{ information.title }}</a></li>
+								  	{% endfor %}
+								</ul>
+							</div>
+							</div>
+					  	</div>
+					  {% endif %}
+
+					  	<div class=" col-lg-4 col-md-4 col-sm-4 collapsed-block box-footer">
+							<div class="module clearfix">
+								<h3 class="footer-title">{{ text_extra }}</h3>
+								<div  class="modcontent" >
+									<ul class="menu">
+										 <li><a href="{{ manufacturer }}">{{ text_manufacturer }}</a></li>
+										<li><a href="{{ sitemap }}">{{ text_sitemap }}</a></li>
+										 <li><a href="{{ affiliate }}">{{ text_affiliate }}</a></li>
+										<li><a href="{{ special }}">{{ text_special }}</a></li>
+										<li><a href="{{ contact }}">{{ text_contact }}</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+
+					 	
+					</div>
+				</div>
+			</div>	
+		</div>	
+	</div>
+	{% endif %}
+	
+	<div class="button-toggle hidden-lg hidden-md">
+         <a class="showmore" data-toggle="collapse" href="#" aria-expanded="false" aria-controls="collapse-footer">
+            <span class="toggle-more">{{ objlang.get('show_more') }} <i class="fa fa-angle-down"></i></span> 
+            <span class="toggle-less">{{ objlang.get('show_less') }} <i class="fa fa-angle-up"></i></span>           
+		</a>        
+	</div>
+	
+	
+	<!-- FOOTER CENTER -->
+	<div class="footer-center">
+		<div class="container">
+			{% if footer_block3 is not empty %}
+				{{footer_block3}}
+			{% endif %}
+		</div>
+	</div>	
+	
+	</div>	
+	{#======	FOOTER BOTTOM	=======#} 
+	<div class="footer-bottom ">
+		<div class="container">
+			<div class="footer-bottom-pt">
+			<div class="row">
+				<div class="col-lg-8 col-md-7 col-xs-12 copyright-text">
+					{% if soconfig.get_settings('copyright') is empty %}
+						{{ powered }}
+					{% else %}
+						{{ soconfig.decode_entities(soconfig.get_settings('copyright'))|replace({'{year}': "now"|date("Y")}) }}
+					{% endif %}
+				</div>
+				{% if soconfig.get_settings('imgpayment_status')%} 
+				<div class="col-lg-4 col-md-5 col-xs-12 text-right">
+					<img src="image/{{  soconfig.get_settings('imgpayment') }}"  alt="imgpayment">
+				</div>
+				{% endif %}
+				
+				
+			</div>
+			</div>
+		</div>
+		
+
+		
+	</div>
+</footer>

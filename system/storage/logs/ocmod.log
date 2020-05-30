@@ -1,0 +1,453 @@
+2020-02-25 4:48:25 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 69
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 77
+LINE: 151
+LINE: 168
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 59
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 67
+LINE: 73
+
+FILE: system/library/template/template.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/twig.php
+CODE: $loader = new \Twig_Loader_Filesystem(DIR_TEMPLATE);
+LINE: 19
+----------------------------------------------------------------
+MOD: So ThemeConfig
+
+FILE: catalog/controller/common/language.php
+CODE: $data['languages'] = array();
+LINE: 17
+
+FILE: catalog/controller/common/cart.php
+CODE: public function index()
+LINE: 7
+
+FILE: catalog/controller/common/header.php
+CODE: public function index()
+LINE: 37
+
+FILE: catalog/controller/common/footer.php
+CODE: public function index()
+LINE: 20
+
+FILE: catalog/controller/common/maintenance.php
+CODE: public function index()
+LINE: 13
+
+FILE: catalog/controller/common/home.php
+CODE: $data['header'] = $this->load->controller('common/header');
+LINE: 22
+
+FILE: catalog/controller/product/search.php
+CODE: public function index()
+LINE: 19
+CODE: $data['products'][] = array(
+LINE: 266
+CODE: $data['products'][] = array
+LINE: 275
+
+FILE: catalog/controller/product/special.php
+CODE: public function index()
+LINE: 19
+CODE: $data['products'][] = array(
+LINE: 156
+CODE: $data['products'][] = array
+LINE: 165
+
+FILE: catalog/controller/product/manufacturer.php
+CODE: public function index()
+LINE: 19
+CODE: $data['products'][] = array(
+LINE: 229
+CODE: $data['products'][] = array
+LINE: 238
+
+FILE: catalog/controller/product/category.php
+CODE: public function index()
+LINE: 19
+CODE: $data['products'][] = array(
+LINE: 238
+CODE: $data['products'][] = array
+LINE: 247
+CODE: public function info()
+LINE: 82
+
+FILE: catalog/controller/product/product.php
+CODE: public function index()
+LINE: 19
+CODE: $this->document->addScript('catalog/view/javascript/jquery/magnific/jquery.magnific-popup.min.js');
+LINE: 235
+CODE: $this->document->addStyle('catalog/view/javascript/jquery/magnific/magnific-popup.css');
+LINE: 240
+CODE: $data['description'] = html_entity_decode($product_info['description'], ENT_QUOTES, 'UTF-8');
+LINE: 271
+CODE: $data['options'] = array();
+LINE: 350
+CODE: $data['products'][] = array(
+LINE: 458
+CODE: $data['products'][] = array
+LINE: 460
+CODE: $data['images'] = array()
+LINE: 306
+
+FILE: catalog/controller/extension/module/featured.php
+CODE: public function index(
+LINE: 19
+CODE: $data['products'][] = array(
+LINE: 95
+CODE: $data['products'][] = array
+LINE: 104
+
+FILE: catalog/controller/extension/module/bestseller.php
+CODE: public function index(
+LINE: 19
+CODE: $data['products'][] = array(
+LINE: 88
+CODE: $data['products'][] = array
+LINE: 97
+
+FILE: catalog/controller/extension/module/latest.php
+CODE: public function index(
+LINE: 19
+CODE: $data['products'][] = array(
+LINE: 95
+CODE: $data['products'][] = array
+LINE: 104
+
+FILE: catalog/controller/extension/module/special.php
+CODE: public function index(
+LINE: 19
+CODE: $data['products'][] = array(
+LINE: 95
+CODE: $data['products'][] = array
+LINE: 104
+
+FILE: system/engine/router.php
+CODE: while ($action instanceof Action)
+LINE: 59
+
+FILE: admin/controller/design/layout.php
+CODE: public function index()
+LINE: 5
+CODE: // Modules layout
+LINE: 362
+CODE: design/layout_form
+LINE: 406
+----------------------------------------------------------------
+MOD: Simple Blog
+
+FILE: admin/controller/common/column_left.php
+CODE: $report = array();
+LINE: 705
+
+FILE: admin/language/ar-ar/common/column_left.php
+CODE: $_['text_other_status']
+LINE: 104
+
+FILE: admin/language/en-gb/common/column_left.php
+CODE: $_['text_other_status']
+LINE: 100
+
+FILE: catalog/controller/startup/seo_url.php
+CODE: if ($query->row['query'] && $url[0] != 'information_id' && $url[0] != 'manufacturer_id' && $url[0] != 'category_id' && $url[0] != 'product_id') {
+LINE: 43
+CODE: if ($url[0] == 'category_id') {
+LINE: 38
+CODE: $this->request->get['route'] = 'error/not_found'
+LINE: 60
+CODE: $this->request->get['route'] = 'information/information';
+LINE: 83
+CODE: } elseif ($key == 'path') {
+LINE: 124
+CODE: $categories = $this->model_catalog_category->getCategories(0);
+NOT FOUND - OPERATIONS ABORTED!
+----------------------------------------------------------------
+MOD: So Menu - OpenCartWorks
+CODE: $design = array();
+LINE: 228
+----------------------------------------------------------------
+MOD: So Placeholder
+CODE: $image = $this->model_tool_image->resize('placeholder.png', $this->config->get('theme_' . $this->config->get('config_theme') . '_image_product_width'), $this->config->get('theme_' . $this->config->get('config_theme') . '_image_product_height'));
+LINE: 185
+CODE: // Set the last category breadcrumb
+LINE: 125
+CODE: $data['thumb'] = '';
+LINE: 134
+CODE: $data['categories'][]
+LINE: 174
+CODE: $data['categories'][]
+LINE: 175
+----------------------------------------------------------------
+MOD: Modification Manager
+
+FILE: admin/language/en-gb/marketplace/modification.php
+CODE: <?php
+LINE: 25
+
+FILE: admin/controller/marketplace/modification.php
+CODE: public function index() {
+LINE: 13
+CODE: $this->model_setting_modification
+LINE: 34
+LINE: 133
+LINE: 531
+LINE: 565
+LINE: 683
+LINE: 687
+CODE: $this->model_setting_modification->
+LINE: 34
+LINE: 133
+LINE: 531
+LINE: 565
+LINE: 683
+LINE: 687
+CODE: $sort = 'name';
+LINE: 627
+CODE: $order = 'ASC';
+LINE: 633
+CODE: $handle = fopen(DIR_LOGS . 'ocmod.log', 'w+');
+LINE: 600
+CODE: $maintenance = $this->config->get('config_maintenance');
+LINE: 76
+CODE: $data['breadcrumbs'] = array();
+LINE: 696
+CODE: $data['sort_name'] =
+LINE: 791
+CODE: $filter_data = array(
+LINE: 717
+CODE: $data['modifications'][] = array(
+LINE: 736
+CODE: $pagination = new Pagination();
+LINE: 824
+CODE: $data['clear_log'] =
+LINE: 722
+CODE: $this->load->view('marketplace/modification'
+LINE: 884
+CODE: $this->response->redirect($this->url->link(!empty($data['redirect']) ? $data['redirect'] : 'marketplace/modification', 'user_token=' . $this->session->data['user_token'] . $url, true));
+LINE: 456
+CODE: if ($this->validate()) {
+LINE: 91
+CODE: $log[] = 'MOD:
+LINE: 188
+CODE: $operations = $file->getElementsByTagName('operation');
+LINE: 203
+CODE: $files = glob($path, GLOB_BRACE);
+LINE: 232
+CODE: if (!$status) {
+LINE: 420
+CODE: $ocmod->write(implode("\n", $log));
+LINE: 459
+CODE: protected function validate(
+LINE: 1452
+----------------------------------------------------------------
+MOD: So Product Feature
+
+FILE: admin/language/ar-ar/catalog/product.php
+CODE: // Entry
+LINE: 39
+
+FILE: admin/language/en-gb/catalog/product.php
+CODE: // Entry
+LINE: 36
+
+FILE: admin/model/catalog/product.php
+CODE: $this->db->query("INSERT INTO " . DB_PREFIX . "product_description SET product_id = '" . (int)$product_id . "', language_id = '" . (int)$language_id . "', name = '" . $this->db->escape($value['name']) . "', description = '" . $this->db->escape($value['description']) . "', tag = '" . $this->db->escape($value['tag']) . "', meta_title = '" . $this->db->escape($value['meta_title']) . "', meta_description = '" . $this->db->escape($value['meta_description']) . "', meta_keyword = '" . $this->db->escape($value['meta_keyword']) . "'");
+LINE: 12
+LINE: 146
+CODE: public function getTotalProductsByTaxClassId($tax_class_id) {
+LINE: 684
+CODE: $query = $this->db->query("SELECT * FROM " . DB_PREFIX . "product_description WHERE product_id = '" . (int)$product_id . "'");
+LINE: 452
+CODE: 'tag'              => $result['tag']
+LINE: 466
+
+FILE: admin/controller/catalog/product.php
+CODE: $data['products'][] = array
+LINE: 366
+CODE: $data['products'][] = array
+LINE: 368
+CODE: $data['layouts'] = $this->model_design_layout->getLayouts();
+LINE: 1176
+
+FILE: admin/view/template/catalog/product_list.twig
+CODE: <td class="text-left">{{ product.name }}</td>
+LINE: 166
+
+FILE: admin/view/template/catalog/product_form.twig
+CODE: <li class="active"><a href="#tab-general" data-toggle="tab">{{ tab_general }}</a></li>
+LINE: 28
+CODE: <div class="tab-pane" id="tab-data">
+LINE: 155
+CODE: $data['options'] = array();
+LINE: 370
+----------------------------------------------------------------
+MOD: Bug Fixing OC-3.x
+
+FILE: admin/controller/design/theme.php
+CODE: if ($theme == 'theme_default')
+LINE: 108
+LINE: 174
+LINE: 216
+LINE: 265
+CODE: {default,' . $theme . '}
+LINE: 122
+
+FILE: catalog/controller/information/contact.php
+CODE: $this->load->language('information/contact')
+LINE: 8
+LINE: 175
+
+FILE: catalog/language/ar-ar/common/cart.php
+CODE: $_['text_empty']
+LINE: 7
+
+FILE: catalog/language/en-gb/common/cart.php
+CODE: $_['text_empty']
+LINE: 3
+
+FILE: catalog/view/theme/default/template/common/cart.twig
+CODE: text_empty
+LINE: 46
+
+FILE: catalog/view/theme/so-ladaz/template/common/cart.twig
+CODE: text_empty
+LINE: 54
+----------------------------------------------------------------
+MOD: Open SendGrid
+
+FILE: admin/controller/marketing/contact.php
+CODE: $mail = new Mail($this->config->get('config_mail_engine'));
+LINE: 208
+CODE: $mail = new Mail($this->config->get('config_mail_engine'));
+LINE: 13
+
+FILE: catalog/model/account/customer.php
+CODE: $mail = new Mail($this->config->get('config_mail_engine'));
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/model/account/customer_group.php
+CODE: $mail = new Mail($this->config->get('config_mail_engine'));
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/model/account/order.php
+CODE: $mail = new Mail($this->config->get('config_mail_engine'));
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/model/checkout/order.php
+CODE: $mail = new Mail($this->config->get('config_mail_engine'));
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/controller/account/forgotten.php
+CODE: $mail = new Mail($this->config->get('config_mail_engine'));
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: admin/controller/common/forgotten.php
+CODE: $mail = new Mail($this->config->get('config_mail_engine'));
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: admin/model/customer/customer.php
+CODE: $mail = new Mail($this->config->get('config_mail_engine'));
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: admin/model/sale/return.php
+CODE: $mail = new Mail($this->config->get('config_mail_engine'));
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: admin/model/sale/voucher.php
+CODE: $mail = new Mail($this->config->get('config_mail_engine'));
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/model/catalog/review.php
+CODE: $mail = new Mail($this->config->get('config_mail_engine'));
+LINE: 22
+
+FILE: admin/controller/mail/affiliate.php
+CODE: $mail = new Mail($this->config->get('config_mail_engine'));
+LINE: 41
+LINE: 97
+
+FILE: admin/controller/mail/customer.php
+CODE: $mail = new Mail($this->config->get('config_mail_engine'));
+LINE: 41
+LINE: 97
+
+FILE: admin/controller/mail/forgotten.php
+CODE: $mail = new Mail($this->config->get('config_mail_engine'));
+LINE: 10
+
+FILE: admin/controller/mail/return.php
+CODE: $mail = new Mail($this->config->get('config_mail_engine'));
+LINE: 40
+
+FILE: admin/controller/mail/reward.php
+CODE: $mail = new Mail($this->config->get('config_mail_engine'));
+LINE: 47
+
+FILE: admin/controller/mail/transaction.php
+CODE: $mail = new Mail($this->config->get('config_mail_engine'));
+LINE: 47
+
+FILE: admin/controller/sale/voucher.php
+CODE: $mail = new Mail($this->config->get('config_mail_engine'));
+LINE: 614
+LINE: 653
+
+FILE: catalog/controller/extension/total/voucher.php
+CODE: $mail = new Mail($this->config->get('config_mail_engine'));
+LINE: 84
+
+FILE: catalog/controller/mail/affiliate.php
+CODE: $mail = new Mail($this->config->get('config_mail_engine'));
+LINE: 30
+LINE: 93
+
+FILE: catalog/controller/mail/forgotten.php
+CODE: $mail = new Mail($this->config->get('config_mail_engine'));
+LINE: 12
+
+FILE: catalog/controller/mail/order.php
+CODE: $mail = new Mail($this->config->get('config_mail_engine'));
+LINE: 261
+LINE: 316
+LINE: 446
+
+FILE: catalog/controller/mail/register.php
+CODE: $mail = new Mail($this->config->get('config_mail_engine'));
+LINE: 30
+LINE: 80
+
+FILE: catalog/controller/mail/transaction.php
+CODE: $mail = new Mail($this->config->get('config_mail_engine'));
+LINE: 17
+
+FILE: catalog/controller/rest/contact.php
+CODE: $mail = new Mail($this->config->get('config_mail_engine'));
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/model/extension/openbay/ebay_order.php
+CODE: $mail = new Mail($this->config->get('config_mail_engine'));
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/model/extension/payment/amazon_login_pay.php
+CODE: $mail = new Mail($this->config->get('config_mail_engine'));
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/model/extension/payment/squareup.php
+CODE: $mail = new Mail($this->config->get('config_mail_engine'));
+NOT FOUND - OPERATIONS ABORTED!
+----------------------------------------------------------------

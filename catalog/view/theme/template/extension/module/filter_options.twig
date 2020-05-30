@@ -1,0 +1,74 @@
+<form action="{{ optaction }}">
+	{% for hidden in hiddens %}
+    <input type="hidden" name="{{hidden.name}}" value="{{hidden.value}}" />
+	{% endfor %}
+	<div class="fltr-panel">
+    <div class="panel panel-default">
+		<div class="panel-heading"><span onclick="$('.clse2').toggle();"><i class="fa fa-angle-down"></i></span>{{ heading_title }}<span onclick="$('.clse2').hide();"><i class="fa fa-close" aria-hidden="true"></i></span></div>		
+		<div class="clse2">
+        <div class="list-group"> {% for option in options %} <a class="list-group-item">{{ option.name }}</a>
+            <div class="list-group-item">
+				<div class="checkbox">
+                <ul id="filter-group{{ option.option_id }}">{% for option_value in option.option_values %}
+                    <li class="">					  
+                        {% if option_value.option_value_id in options_set %}                                                                
+						<input type="checkbox" id="{{ option_value.option_value_id }}" class="option optt" name="option_value[{{ option_value.option_value_id }}]" value="{{ option_value.option_value_id }}" checked="checked" onchange="optionFilter({{ option_value.option_value_id }})"; />
+						<label for="{{ option_value.option_value_id }}">    {{ option_value.name }} </label>
+	            {% else %}	
+						<input type="checkbox" id="{{ option_value.option_value_id }}" class="option optt"  name="option_value[{{ option_value.option_value_id }}]" value="{{ option_value.option_value_id }}"  onchange="optionFilter({{ option_value.option_value_id }})"; />
+						<label for="{{ option_value.option_value_id }}">	 {{ option_value.name }}</label>
+	            {% endif %}						
+                    </li>
+	        {% endfor %}</ul>
+					</div>
+            </div>
+	    {% endfor %}</div>
+		</div>
+        {#<div class="panel-footer text-right">
+            <input type="submit" id="button-filter" class="btn btn-primary" value="{{ button_filter }}" />
+        </div>#}
+    </div>
+	</div>
+</form>
+
+<script>
+
+
+
+      
+    
+    function optionFilter(option_value) {
+        var aa="";
+        var checkedValue = null; 
+var inputElements = document.getElementsByClassName('option');
+        for(var i=0; inputElements[i]; ++i){
+              if(inputElements[i].checked){
+                   checkedValue = inputElements[i].value;
+                    aa =checkedValue+ ","+aa;
+              }
+        }
+aa = aa.replace(/,\s*$/, "");
+        
+ 
+          
+            pr = "&option_value=" + aa;
+        
+        location = "{{ optaction }}" + pr;
+    }
+
+    /* $( document ).ready( function () {
+     
+     $('#button-filter').on('click', function() {
+     console.log("asdfsd");
+     pr = '';
+     price = $('#price-slider').val();
+     if(price!='')
+     {
+     pr = "&pr="+price;
+     }
+     location = "{{ action }}"+pr;
+     });
+     });*/
+
+
+</script>
