@@ -17,10 +17,10 @@ class ControllerToolurlsign extends Controller {
     public function url( ) {
          $resVal = array();
         
-        $location_to_key_file ="d:/stutzen/stutzenme-55d6bec60d20.p12";
-        $serviceAccountName = "stutzendev@stutzenme.iam.gserviceaccount.com";
-        $expiration = "60000";
-        $bucketName ="albumzen";
+        $location_to_key_file =$this->config->get('module_cloud_storage_file_path');
+        $serviceAccountName = $this->config->get('module_cloud_storage_service_account');
+        $expiration = $this->config->get('module_cloud_storage_expiration');
+        $bucketName =$this->config->get('module_cloud_storage_bucket');
         
         $verb = $this->request->get['verb']; 
         $contentype =''; 
