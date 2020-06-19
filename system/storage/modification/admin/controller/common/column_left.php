@@ -717,17 +717,19 @@ class ControllerCommonColumnLeft extends Controller {
 
 			$simpleblogsettings = array();
 			
-			$simpleblogsettings[] = array(
-				'name'	   => $this->language->get('text_simple_blog_general_setting'),
-				'href'     => $this->url->link('extension/module/simple_blog', 'user_token=' . $this->session->data['user_token'], true),
-				'children' => array()
-			);
-		
-			$simpleblogsettings[] = array(
-				'name'	   => $this->language->get('text_simple_blog_category_setting'),
-				'href'     => $this->url->link('extension/module/simple_blog_category', 'user_token=' . $this->session->data['user_token'], true),
-				'children' => array()
-			);
+                        if ($this->user->hasPermission('access', 'extension/module/simple_blog')){
+                            $simpleblogsettings[] = array(
+                                    'name'	   => $this->language->get('text_simple_blog_general_setting'),
+                                    'href'     => $this->url->link('extension/module/simple_blog', 'user_token=' . $this->session->data['user_token'], true),
+                                    'children' => array()
+                            );
+
+                            $simpleblogsettings[] = array(
+                                    'name'	   => $this->language->get('text_simple_blog_category_setting'),
+                                    'href'     => $this->url->link('extension/module/simple_blog_category', 'user_token=' . $this->session->data['user_token'], true),
+                                    'children' => array()
+                            );
+                        }
 			
 			if ($simpleblogsettings) {
 				$simpleblog[] = array(

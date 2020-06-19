@@ -27,14 +27,14 @@ class ModelToolImage extends Model {
                     @mkdir(DIR_IMAGE . $path, 0777);
                 }
             }
-            $filename = 'https://storage.googleapis.com/albumzen/' . $filename;
+            $filename = 'https://storage.googleapis.com/'.$this->config->get('module_cloud_storage_bucket').'/' . $filename;
            
             if ($data = @getimagesize($filename))  
             {
             
             } else {
                 $extension = 'png';
-                $filename = 'https://storage.googleapis.com/albumzen/no_image.png';
+                $filename = 'https://storage.googleapis.com/'.$this->config->get('module_cloud_storage_bucket').'/no_image.png';
             }
             list($width, $height) = getimagesize($filename);
             //$new_width = $width * $percent;
