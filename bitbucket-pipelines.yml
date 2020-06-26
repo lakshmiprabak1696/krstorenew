@@ -40,7 +40,7 @@ pipelines:
 
         # deploy to cloud run
         #- gcloud beta run deploy $SERVICE_NAME --image $IMAGE_NAME --region us-central1 --project oerp-zen
-        - gcloud run deploy $SERVICE_NAME --image=$IMAGE_NAME --platform=managed --port=80 --set-env-vars=[DB_HOST1='localhost;unix_socket=/cloudsql/stutzenme:us-central1:sz-mysql-5-7',DB_DATABASE1='ssodev_db',DB_USERNAME1='ssodev_db',DB_PASSWORD1='c7Kp@6m7',CACHE_DRIVER1='redis',SESSION_DRIVER1='redis',REDIS_HOST1='10.240.0.5',REDIS_PASSWORD1='null',REDIS_PORT1='32768',REDIS_CACHE_DB1='0'] --allow-unauthenticated --service-account=bitbucketpipeline@stutzenme.iam.gserviceaccount.com --add-cloudsql-instances=stutzenme:us-central1:sz-mysql-5-7 --region=us-central1 --project=stutzenme
+        #- gcloud run deploy $SERVICE_NAME --image=$IMAGE_NAME --platform=managed --port=80 --set-env-vars=[DB_HOST1='localhost;unix_socket=/cloudsql/stutzenme:us-central1:sz-mysql-5-7',DB_DATABASE1='ssodev_db',DB_USERNAME1='ssodev_db',DB_PASSWORD1='c7Kp@6m7',CACHE_DRIVER1='redis',SESSION_DRIVER1='redis',REDIS_HOST1='10.240.0.5',REDIS_PASSWORD1='null',REDIS_PORT1='32768',REDIS_CACHE_DB1='0'] --allow-unauthenticated --service-account=bitbucketpipeline@stutzenme.iam.gserviceaccount.com --add-cloudsql-instances=stutzenme:us-central1:sz-mysql-5-7 --region=us-central1 --project=stutzenme
 
                     # :-)
                     #- echo "May the force be with you."
