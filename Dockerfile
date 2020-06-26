@@ -35,10 +35,10 @@ RUN a2enmod rewrite headers
 # 4. start with base php config, then add extensions
 #RUN mv "$PHP_INI_DIR/php.ini-production" "$PHP_INI_DIR/php.ini"
 
-ENV DB_DATABASE='opencart'
-ENV DB_HOST='192.168.10.38'
-ENV DB_USERNAME='root'
-ENV DB_PASSWORD='root'
+ENV DB_DATABASE1='opencart'
+ENV DB_HOST1='192.168.10.38'
+ENV DB_USERNAME1='root'
+ENV DB_PASSWORD1='root'
 
 RUN docker-php-ext-install \
     pdo_mysql \
