@@ -16,10 +16,10 @@ cp /var/www/opencart/config_admin_prod.php /var/www/opencart/admin/config.php
 sed -ri -e "s!env_db_host!$db_hos1t!g" /var/www/opencart/config.php
 sed -ri -e "s!env_db_database!$db_name1!g" /var/www/opencart/config.php
 sed -ri -e "s!env_db_username!$db_username1!g" /var/www/opencart/config.php
-sed -ri -e "s!env_db_password!$db_password1!g" /var/www/opencart/config.php
+#sed -ri -e "s!env_db_password!$db_password1!g" /var/www/opencart/config.php
 
 sed -ri -e "s!env_db_host!$db_host1!g" /var/www/opencart/admin/config.php
 sed -ri -e "s!env_db_database!$db_name1!g" /var/www/opencart/admin/config.php
 sed -ri -e "s!env_db_username!$db_username1!g" /var/www/opencart/admin/config.php
-sed -ri -e "s!env_db_password!$db_password1!g" /var/www/opencart/admin/config.php
+#sed -ri -e "s!env_db_password!$db_password1!g" /var/www/opencart/admin/config.php
 exec "$@";
