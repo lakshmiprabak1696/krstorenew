@@ -29,3 +29,4 @@ define('DB_PASSWORD', 'env_db_password');
 define('DB_DATABASE', 'env_db_database');
 define('DB_PORT', '3306');
 define('DB_PREFIX', 'oc_');
+define('DB_SOCKET', 'env_db_socket');
