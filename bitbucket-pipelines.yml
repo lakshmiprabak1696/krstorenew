@@ -19,7 +19,7 @@ pipelines:
         # - gcloud config list
 
         # set image name
-        - export IMAGE_NAME=gcr.io/iamretailer-281612/iar/krstoreprd:1.0.0 # ex. gcr.io/my-g-project/my-cr-service 
+        - export IMAGE_NAME=gcr.io/iamretailer-281612/iar/krstoreprd:1.0.1 # ex. gcr.io/my-g-project/my-cr-service 
         - export SERVICE_NAME=krstore
 
         # Build image
