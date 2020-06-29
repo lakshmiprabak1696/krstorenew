@@ -23,7 +23,7 @@ pipelines:
         - export SERVICE_NAME=krstorebb
 
         # Build image
-        - docker build -t $IMAGE_NAME .
+        #- docker build -t $IMAGE_NAME .
 
         # Gcloud auth and check
         - echo $KEY_FILE_IAR | base64 -d > ./gcloud-api-key.json
@@ -35,6 +35,12 @@ pipelines:
         # config image registry with gcloud helper
         - gcloud auth configure-docker -q
 
+        #To access the contents of a specific secret version
+        - gcloud secrets versions access 1 --secret="iarp12"
+        
+        # Build image
+        - docker build -t $IMAGE_NAME .
+        
         # push image to gcr
         - docker push $IMAGE_NAME
 
