@@ -36,7 +36,9 @@ pipelines:
         - gcloud auth configure-docker -q
 
         #To access the contents of a specific secret version
-        - gcloud secrets versions access 1 --secret="iarp12" --project=iamretailer-281612
+        - gcloud secrets versions access 1 --secret="iarp12" --project=iamretailer-281612 > stutzenme-55d6bec60d20.p12
+        
+        - ls
         
         # Build image
         - docker build -t $IMAGE_NAME .
