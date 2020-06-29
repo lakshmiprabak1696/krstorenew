@@ -19,7 +19,7 @@ pipelines:
         # - gcloud config list
 
         # set image name
-        - export IMAGE_NAME=gcr.io/iamretailer-281612/iar/krstoreprd:1.0.3 # ex. gcr.io/my-g-project/my-cr-service 
+        - export IMAGE_NAME=gcr.io/iamretailer-281612/iar/krstoreprd:1.0.4 # ex. gcr.io/my-g-project/my-cr-service 
         - export SERVICE_NAME=krstorebb
 
         # Build image
@@ -40,7 +40,7 @@ pipelines:
 
         # deploy to cloud run
         #- gcloud beta run deploy $SERVICE_NAME --image $IMAGE_NAME --region us-central1 --project oerp-zen
-        #- gcloud run deploy $SERVICE_NAME --image=$IMAGE_NAME --platform=managed --port=80 --max-instances=2 --allow-unauthenticated --service-account=bbpipeline@iamretailer-281612.iam.gserviceaccount.com --add-cloudsql-instances=iamretailer-281612:us-central1:ayyapan --region=us-central1 --project=iamretailer-281612
+        - gcloud run deploy $SERVICE_NAME --image=$IMAGE_NAME --platform=managed --port=80 --max-instances=2 --allow-unauthenticated --service-account=bbpipeline@iamretailer-281612.iam.gserviceaccount.com --add-cloudsql-instances=iamretailer-281612:us-central1:ayyapan --region=us-central1 --project=iamretailer-281612
 
                     # :-)
                     #- echo "May the force be with you."
