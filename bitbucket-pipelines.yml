@@ -41,7 +41,7 @@ pipelines:
         - ls
         - cat dns_record.json
         - dns=($(sed -n '2p' < dns_record.json))
-        - echo "$dns[0]"
+        - echo $dns[0]
 
 
 
