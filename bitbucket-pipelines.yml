@@ -40,6 +40,7 @@ pipelines:
 
         - ls
         - cat dns_record.json
+        - sed -n '2p' < dns_record.json
 
 
 
