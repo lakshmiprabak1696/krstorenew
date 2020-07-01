@@ -36,7 +36,7 @@ pipelines:
         - gcloud auth configure-docker -q
        
 
-        - gcloud beta run domain-mappings create --service krstorebb --platform=managed --region=us-central1 --project=iamretailer-281612  --domain opencartcli2.iar.net.in > dns_record.json
+        - gcloud beta run domain-mappings create --service krstorebb --platform=managed --region=us-central1 --project=iamretailer-281612  --domain opencartcli3.iar.net.in > dns_record.json
 
         - ls
         - cat dns_record.json
