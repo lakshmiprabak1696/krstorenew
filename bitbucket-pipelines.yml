@@ -14,41 +14,42 @@ pipelines:
         image: google/cloud-sdk:latest
         deployment: production
         script:
+          - cloudflared access login https://iar.net.in
         # set CLOUDSDK_CONFIG environment variables
         # - export CLOUDSDK_CONFIG=`pwd`/credentials/service-account.json
         # - gcloud config list
 
         # set image name
-        - export IMAGE_NAME=gcr.io/iamretailer-281612/iar/krstoreprd:1.0.4 # ex. gcr.io/my-g-project/my-cr-service 
-        - export SERVICE_NAME=krstorebb
+        #- export IMAGE_NAME=gcr.io/iamretailer-281612/iar/krstoreprd:1.0.4 # ex. gcr.io/my-g-project/my-cr-service 
+        #- export SERVICE_NAME=krstorebb
 
         # Build image
         #- docker build -t $IMAGE_NAME .
 
         # Gcloud auth and check
-        - echo $KEY_FILE_IAR | base64 -d > ./gcloud-api-key.json
+        #- echo $KEY_FILE_IAR | base64 -d > ./gcloud-api-key.json
         #- gcloud auth activate-service-account --key-file gcloud-api-key.json
-        - gcloud auth activate-service-account bbpipeline@iamretailer-281612.iam.gserviceaccount.com --key-file=./gcloud-api-key.json
+        #- gcloud auth activate-service-account bbpipeline@iamretailer-281612.iam.gserviceaccount.com --key-file=./gcloud-api-key.json
         #- gcloud auth activate-service-account --key-file=/tmp/key-file.json
-        - gcloud config list
+        #- gcloud config list
 
         # config image registry with gcloud helper
-        - gcloud auth configure-docker -q
+        #- gcloud auth configure-docker -q
 
         #To access the contents of a specific secret version
-        - gcloud secrets versions access 1 --secret="iarp12" --project=iamretailer-281612 > stutzenme-55d6bec60d20.p12
+        #- gcloud secrets versions access 1 --secret="iarp12" --project=iamretailer-281612 > stutzenme-55d6bec60d20.p12
         
-        - ls
+        #- ls
         
         # Build image
-        - docker build -t $IMAGE_NAME .
+        #- docker build -t $IMAGE_NAME .
         
         # push image to gcr
-        - docker push $IMAGE_NAME
+        #- docker push $IMAGE_NAME
 
         # deploy to cloud run
         #- gcloud beta run deploy $SERVICE_NAME --image $IMAGE_NAME --region us-central1 --project oerp-zen
-        - gcloud run deploy $SERVICE_NAME --image=$IMAGE_NAME --platform=managed --port=80 --max-instances=2 --allow-unauthenticated --service-account=bbpipeline@iamretailer-281612.iam.gserviceaccount.com --add-cloudsql-instances=iamretailer-281612:us-central1:ayyapan --region=us-central1 --project=iamretailer-281612
+        #- gcloud run deploy $SERVICE_NAME --image=$IMAGE_NAME --platform=managed --port=80 --max-instances=2 --allow-unauthenticated --service-account=bbpipeline@iamretailer-281612.iam.gserviceaccount.com --add-cloudsql-instances=iamretailer-281612:us-central1:ayyapan --region=us-central1 --project=iamretailer-281612
 
                     # :-)
                     #- echo "May the force be with you."
