@@ -37,6 +37,8 @@ pipelines:
        
 
         - gcloud beta run domain-mappings create --service krstorebb --platform=managed --region=us-central1 --project=iamretailer-281612  --domain opencartcli5.iar.net.in --format="json"> dns_record.json
+        - apt-get update
+        - apt-get install -y jq
         - cat dns_record.json | jq '.name'
 
         #- ls
