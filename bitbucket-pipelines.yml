@@ -40,7 +40,7 @@ pipelines:
         - apt-get update
         - apt-get install -y jq
         - cat dns_record.json
-        - cat dns_record.json | jq '.[].name'
+        - cat dns_record.json | jq '.[0]' | jq '.name'
 
         #- ls
         #- cat dns_record.json
