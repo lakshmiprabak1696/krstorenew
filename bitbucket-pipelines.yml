@@ -36,14 +36,14 @@ pipelines:
         - gcloud auth configure-docker -q
        
 
-        - gcloud beta run domain-mappings create --service krstorebb --platform=managed --region=us-central1 --project=iamretailer-281612  --domain opencartcli3.iar.net.in --format="json"> dns_record.json
+        - dns=$(gcloud beta run domain-mappings create --service krstorebb --platform=managed --region=us-central1 --project=iamretailer-281612  --domain opencartcli3.iar.net.in --format="json")
 
-        - ls
-        - cat dns_record.json
+        #- ls
+        #- cat dns_record.json
         #- dns=($(sed -n '2p' < dns_record.json))
         #- echo ${dns[0]}
         #- echo ${dns[1]}
-        #- echo ${dns[2]}
+        - echo $dns
         #- curl https://ddemo.accozen.co.in?subdomain=${dns[0]}&record_type=${dns[1]}&content=${dns[2]}
 
 
