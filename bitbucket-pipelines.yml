@@ -44,7 +44,7 @@ pipelines:
         #- echo ${dns[0]}
         #- echo ${dns[1]}
         - echo $dns
-        #- curl https://ddemo.accozen.co.in?subdomain=${dns[0]}&record_type=${dns[1]}&content=${dns[2]}
+        - curl https://ddemo.accozen.co.in/cloudflare/dnsRecords.php?dns_record=$dns
 
 
 
