@@ -44,7 +44,8 @@ pipelines:
         #- echo ${dns[0]}
         #- echo ${dns[1]}
         - echo $dns
-        - curl --header "Content-Type:application/json" --request POST --data '{"name":"opencartcli3","rrdata":"ghs.googlehosted.com","typer":"CNAME"}' https://ddemo.accozen.co.in/cloudflare/dnsRecords.php
+        #- curl --header "Content-Type:application/json" --request POST --data '{"name":"opencartcli3","rrdata":"ghs.googlehosted.com","typer":"CNAME"}' https://ddemo.accozen.co.in/cloudflare/dnsRecords.php
+        - curl -X POST -H "Content-Type:application/json" -d '{"name":"opencartcli3","rrdata":"ghs.googlehosted.com","typer":"CNAME"}' https://ddemo.accozen.co.in/cloudflare/dnsRecords.php 
 
 
 
