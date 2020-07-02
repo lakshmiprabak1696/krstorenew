@@ -44,7 +44,7 @@ pipelines:
         #- echo ${dns[0]}
         #- echo ${dns[1]}
         - echo $dns
-        - curl --header "Content-Type:application/json" --request POST --data $dns https://ddemo.accozen.co.in/cloudflare/dnsRecords.php
+        - curl --header "Content-Type:application/json" --request POST --data echo "'".$dns."'" https://ddemo.accozen.co.in/cloudflare/dnsRecords.php
 
 
 
