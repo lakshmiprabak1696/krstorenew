@@ -36,7 +36,7 @@ pipelines:
         - gcloud auth configure-docker -q
        
 
-        - gcloud beta run domain-mappings create --service krstorebb --platform=managed --region=us-central1 --project=iamretailer-281612  --domain opencartcli5.iar.net.in --format="json"> dns_record.json
+        - gcloud beta run domain-mappings create --service krstorebb --platform=managed --region=us-central1 --project=iamretailer-281612  --domain opencartcli6.iar.net.in --format="json"> dns_record.json
         - apt-get update
         - apt-get install -y jq
         - cat dns_record.json
@@ -48,7 +48,7 @@ pipelines:
         #- echo ${dns[0]}
         #- echo ${dns[1]}
         #- echo ${dns[2]}
-        - curl -X POST -H "Content-Type:application/x-www-form-urlencoded" -d "name=dns&type=CNAME&rrdata=ghs.googlehosted.com" https://ddemo.accozen.co.in/cloudflare/dnsRecords.php
+        - curl -X POST -H "Content-Type:application/x-www-form-urlencoded" -d "name=$dns&type=CNAME&rrdata=ghs.googlehosted.com" https://ddemo.accozen.co.in/cloudflare/dnsRecords.php
         #- curl --header "Content-Type:application/json" --request POST --data '{"name":"opencartcli3","rrdata":"ghs.googlehosted.com","typer":"CNAME"}' https://ddemo.accozen.co.in/cloudflare/dnsRecords.php
         #- curl -X POST -H -H "Accept:application/json" -H "Content-Type:application/json" -d '{"name":"opencartcli3","rrdata":"ghs.googlehosted.com","typer":"CNAME"}' https://ddemo.accozen.co.in/cloudflare/dnsRecords.php 
 
