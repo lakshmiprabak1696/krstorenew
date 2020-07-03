@@ -41,6 +41,8 @@ pipelines:
         - apt-get install -y jq
         - cat dns_record.json
         - dns=$(cat dns_record.json | jq '.[0]' | jq '.name')
+        - type=$(cat dns_record.json | jq '.[0]' | jq '.type')
+        - rrdata=$(cat dns_record.json | jq '.[0]' | jq '.rrdata')
 
         #- ls
         #- cat dns_record.json
@@ -48,7 +50,7 @@ pipelines:
         #- echo ${dns[0]}
         #- echo ${dns[1]}
         #- echo ${dns[2]}
-        - curl -X POST -H "Content-Type:application/x-www-form-urlencoded" -d "name=$dns&type=CNAME&rrdata=ghs.googlehosted.com" https://ddemo.accozen.co.in/cloudflare/dnsRecords.php
+        - curl -X POST -H "Content-Type:application/x-www-form-urlencoded" -d "name=$dns&type=$type&rrdata=$rrdata" https://ddemo.accozen.co.in/cloudflare/dnsRecords.php
         #- curl --header "Content-Type:application/json" --request POST --data '{"name":"opencartcli3","rrdata":"ghs.googlehosted.com","typer":"CNAME"}' https://ddemo.accozen.co.in/cloudflare/dnsRecords.php
         #- curl -X POST -H -H "Accept:application/json" -H "Content-Type:application/json" -d '{"name":"opencartcli3","rrdata":"ghs.googlehosted.com","typer":"CNAME"}' https://ddemo.accozen.co.in/cloudflare/dnsRecords.php 
 
