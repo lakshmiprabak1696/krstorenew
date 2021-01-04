@@ -21,6 +21,7 @@ pipelines:
         # set image name
         - export IMAGE_NAME=gcr.io/iamretailer-281612/iar/krstoreprd:1.0.4 # ex. gcr.io/my-g-project/my-cr-service 
         - export SERVICE_NAME=krstorebb
+        - echo $BITBUCKET_BRANCH
 
         # Build image
         #- docker build -t $IMAGE_NAME .
