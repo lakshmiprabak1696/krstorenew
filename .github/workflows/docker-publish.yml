@@ -21,4 +21,4 @@ jobs:
           project_id: iamretailer-281612
           image_name: krstore
           image_tag: ${{ steps.get_tag_name.outputs.GIT_TAG_NAME}}
-          dockerfile: ./build/Dockerfile
+          dockerfile: ./Dockerfile
