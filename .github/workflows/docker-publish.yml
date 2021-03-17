@@ -8,8 +8,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: GCP Build and Push
       - uses: actions/checkout@v2
+      - name: GCP Build and Push
       - uses: RafikFarhad/push-to-gcr-github-action@v3.0.2
         with:
           gcloud_service_key: ${{ secrets.GCLOUD_SERVICE_KEY }}
