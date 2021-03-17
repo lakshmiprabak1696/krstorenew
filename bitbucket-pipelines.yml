@@ -19,12 +19,11 @@ pipelines:
         # - gcloud config list
 
         # set image name
-        - export IMAGE_NAME=gcr.io/iamretailer-281612/iar/krstoreprd:1.0.4 # ex. gcr.io/my-g-project/my-cr-service 
-        - export SERVICE_NAME=krstorebb
-        - echo $BITBUCKET_BRANCH
+        - export IMAGE_NAME=gcr.io/iamretailer-281612/iar/krstore:1.0.0 # ex. gcr.io/my-g-project/my-cr-service 
+        - export SERVICE_NAME=ssogcr
 
         # Build image
-        #- docker build -t $IMAGE_NAME .
+        - docker build -t $IMAGE_NAME .
 
         # Gcloud auth and check
         - echo $KEY_FILE_IAR | base64 -d > ./gcloud-api-key.json
@@ -35,28 +34,7 @@ pipelines:
 
         # config image registry with gcloud helper
         - gcloud auth configure-docker -q
-       
 
-        - gcloud beta run domain-mappings create --service krstorebb --platform=managed --region=us-central1 --project=iamretailer-281612  --domain opencartcli7.iar.net.in > dns_record.json
-        #- apt-get update
-        #- apt-get install -y jq
-        - cat dns_record.json
-        #- dns=$(cat dns_record.json | jq '.[0]' | jq '.name')
-        #- type=$(cat dns_record.json | jq '.[0]' | jq '.type')
-        #- rrdata=$(cat dns_record.json | jq '.[0]' | jq '.rrdata')
-
-        #- ls
-        #- cat dns_record.json
-        - dns=($(sed -n '2p' < dns_record.json))
-        - echo ${dns[0]}
-        - echo ${dns[1]}
-        - echo ${dns[2]}
-        - curl -X POST -H "Content-Type:application/x-www-form-urlencoded" -d "name=${dns[0]}&type=${dns[1]}&rrdata=${dns[2]}" https://ddemo.accozen.co.in/cloudflare/dnsRecords.php
-        #- curl --header "Content-Type:application/json" --request POST --data '{"name":"opencartcli3","rrdata":"ghs.googlehosted.com","typer":"CNAME"}' https://ddemo.accozen.co.in/cloudflare/dnsRecords.php
-        #- curl -X POST -H -H "Accept:application/json" -H "Content-Type:application/json" -d '{"name":"opencartcli3","rrdata":"ghs.googlehosted.com","typer":"CNAME"}' https://ddemo.accozen.co.in/cloudflare/dnsRecords.php 
-
-
-
-                    # :-)
-                    #- echo "May the force be with you."
+        # push image to gcr
+        - docker push $IMAGE_NAME
 
