@@ -2,10 +2,12 @@ name: Docker
 on:
   push:
     branches: [ master ]
+  pull_request:
+    branches: [ master]
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - name: Build the Docker image
-        run: docker build -t gcr.io/iamretailer-281612/iar/krstore:1.0.7 .
+        run: docker build -t gcr.io/iamretailer-281612/iar/krstore:1.0.0 .
