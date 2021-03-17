@@ -20,3 +20,5 @@ jobs:
           image_name: krstore
           image_tag: 1.0.0
           dockerfile: ./Dockerfile
+      - name: Deploy
+		run: gcloud run deploy krstorebb --image=$IMAGE_NAME --platform=managed --port=80 --allow-unauthenticated --service-account=bbpipeline@iamretailer-281612.iam.gserviceaccount.com --add-cloudsql-instances=iamretailer-281612:us-central1:ayyapan --region=us-central1 --project=iamretailer-281612
