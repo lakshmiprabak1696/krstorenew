@@ -23,6 +23,6 @@ jobs:
         id: deploy
       - uses: google-github-actions/deploy-cloudrun@main
         with: 
-            image: gcr.io/krstore
+            image: gcr.io/iamretailer-281612/krstore:1.0.0
             service: krstorebb
             credentials: ${{ secrets.GCLOUD_SERVICE_KEY }}
