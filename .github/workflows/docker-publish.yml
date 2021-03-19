@@ -21,6 +21,6 @@ jobs:
       - name: Deploy Docker image
       - uses: google-github-actions/deploy-cloudrun@main
         with:
-          image: gcr.io/cloudrun/hello
+          image: gcr.io/iamretailer-281612/krstore
           service: krstorebb
           credentials: ${{ secrets.GCLOUD_SERVICE_KEY }}
