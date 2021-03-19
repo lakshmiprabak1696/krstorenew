@@ -20,3 +20,9 @@ jobs:
           image_name: krstore
           image_tag: 1.0.0
           dockerfile: ./Dockerfile
+        id: deploy
+      - uses: google-github-actions/deploy-cloudrun@main
+        with: 
+            image: gcr.io/iamretailer-281612/krstore
+            service: krstorebb
+            credentials: ${{ secrets.GCLOUD_SERVICE_KEY }}
