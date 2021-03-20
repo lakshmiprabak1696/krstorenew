@@ -34,3 +34,8 @@ jobs:
           exclusions: '*.git* /*node_modules/* .editorconfig'
       - name: List
         run: ls
+        id: upload-file
+      - uses: google-github-actions/upload-cloud-storage@main
+        with:
+          path: app.zip
+          destination: iar_themes/app.zip
