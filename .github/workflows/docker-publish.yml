@@ -24,3 +24,10 @@ jobs:
             image: gcr.io/iamretailer-281612/krstore:1.0.0
             service: krstorebb
             credentials: ${{ secrets.GCLOUD_SERVICE_KEY }}
+      - name: Archive Release
+        uses: thedoctor0/zip-release@master
+        with:
+          filename: 'app.zip'
+          path: .
+          exclusions: '*.git* /*node_modules/* .editorconfig'
+          
