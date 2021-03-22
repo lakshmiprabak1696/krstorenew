@@ -18,7 +18,7 @@ jobs:
           registry: gcr.io
           project_id: iamretailer-281612
           image_name: krstore
-          image_tag: 1.0.0
+          image_tag: 1.0.1
           dockerfile: ./Dockerfile
         id: deploy
       - uses: google-github-actions/deploy-cloudrun@main
