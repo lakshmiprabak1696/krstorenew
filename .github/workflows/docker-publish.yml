@@ -3,7 +3,7 @@ on:
   push:
     branches: [Production]
 env:
-  PROJECT_ID: ${{ secrets.GCP_PROJECT }}
+  PROJECT_ID: iamretailer-281612
   IMAGE_NAME: krstore
   IMAGE_TAG: 1.0.3
   SERVICE_NAME: krstorebb
