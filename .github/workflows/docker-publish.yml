@@ -2,6 +2,11 @@ name: Docker
 on:
   push:
     branches: [Production]
+env:
+  PROJECT_ID: ${{ secrets.GCP_PROJECT }}
+  IMAGE_NAME: krstore
+  IMAGE_TAG: 1.0.3
+  SERVICE_NAME: krstorebb
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -20,13 +25,13 @@ jobs:
         run: gcloud auth configure-docker
       - name: Build and Push Container
         run: |-
-          docker build -t gcr.io/iamretailer-281612/krstore:1.0.2 .
-          docker push gcr.io/iamretailer-281612/krstore:1.0.2
+          docker build -t gcr.io/${{env.PROJECT_ID}}/${{IMAGE_NAME}}:${{IMAGE_TAG}} .
+          docker push gcr.io/${{env.PROJECT_ID}}/${{IMAGE_NAME}}:${{IMAGE_TAG}}
         id: deploy
       - uses: google-github-actions/deploy-cloudrun@main
         with: 
-            image: gcr.io/iamretailer-281612/krstore:1.0.2
-            service: krstorebb
+            image: gcr.io/${{env.PROJECT_ID}}/${{IMAGE_NAME}}:${{IMAGE_TAG}}
+            service: ${{env.SERVICE_NAME}}
             credentials: ${{ secrets.GCLOUD_SERVICE_KEY }}
       - name: Archive Release
         uses: thedoctor0/zip-release@master
