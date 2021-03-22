@@ -10,18 +10,22 @@ jobs:
       - name: Push to Gcr
         id: get_tag_name
         run: echo ::set-output name=GIT_TAG_NAME::${GITHUB_REF/refs\/tags\//}
-      - uses: RafikFarhad/push-to-gcr-github-action@v3.0.2
+      - name: Setup Cloud SDK
+        uses: google-github-actions/setup-gcloud@v0.2.0
         with:
-          gcloud_service_key: ${{ secrets.GCLOUD_SERVICE_KEY }}
-          registry: gcr.io
           project_id: iamretailer-281612
-          image_name: krstore
-          image_tag: 1.0.1
-          dockerfile: ./Dockerfile
+          service_account_key: ${{ secrets.GCLOUD_SERVICE_KEY }}
+          export_default_credentials: true  # Set to true to authenticate the Cloud Run action
+      - name: Authorize Docker push
+        run: gcloud auth configure-docker
+      - name: Build and Push Container
+        run: |-
+          docker build -t gcr.io/iamretailer-281612/krstore:1.0.2 .
+          docker push gcr.io/iamretailer-281612/krstore:1.0.2
         id: deploy
       - uses: google-github-actions/deploy-cloudrun@main
         with: 
-            image: gcr.io/iamretailer-281612/krstore:1.0.0
+            image: gcr.io/iamretailer-281612/krstore:1.0.2
             service: krstorebb
             credentials: ${{ secrets.GCLOUD_SERVICE_KEY }}
       - name: Archive Release
