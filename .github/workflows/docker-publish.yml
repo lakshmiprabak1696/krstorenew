@@ -20,14 +20,30 @@ jobs:
         with:
           project_id: iamretailer-281612
           service_account_key: ${{ secrets.GCLOUD_SERVICE_KEY }}
-          export_default_credentials: true  # Set to true to authenticate the Cloud Run action 
-      - name: Archive Release
-        uses: thedoctor0/zip-release@master
-        with:
-          filename: 'app.zip'
-          path: .
-          exclusions: '*.git* /*node_modules/* .editorconfig'
-      - uses: google-github-actions/upload-cloud-storage@main
-        with:
-          path: app.zip
-          destination: iar_themes/app.zip
+          export_default_credentials: true  # Set to true to authenticate the Cloud Run action
+      - name: Authorize Docker push
+        run: gcloud auth configure-docker
+      - name: Build and Push Container
+        run: |-
+          #docker build -t gcr.io/${{env.PROJECT_ID}}/${{env.IMAGE_NAME}}:${{env.IMAGE_TAG}} .
+          #docker push gcr.io/${{env.PROJECT_ID}}/${{env.IMAGE_NAME}}:${{env.IMAGE_TAG}}
+          gcloud beta run domain-mappings create --service ${{env.SERVICE_NAME}} --domain krstoredemo.iar.net.in
+      #  id: deploy
+      #- uses: google-github-actions/deploy-cloudrun@main
+      #  with: 
+      #      image: gcr.io/${{env.PROJECT_ID}}/${{env.IMAGE_NAME}}:${{env.IMAGE_TAG}}
+      #      service: ${{env.SERVICE_NAME}}
+      #      credentials: ${{ secrets.GCLOUD_SERVICE_KEY }}
+      #- name: Archive Release
+      #  uses: thedoctor0/zip-release@master
+      #  with:
+      #    filename: 'app.zip'
+      #    path: .
+      #    exclusions: '*.git* /*node_modules/* .editorconfig'
+      #- name: List
+      #  run: ls
+      #  id: upload-file
+      #- uses: google-github-actions/upload-cloud-storage@main
+      #  with:
+      #    path: app.zip
+      #    destination: gs://iar_themes/app.zip
