@@ -27,6 +27,7 @@ jobs:
         run: |-
           #docker build -t gcr.io/${{env.PROJECT_ID}}/${{env.IMAGE_NAME}}:${{env.IMAGE_TAG}} .
           #docker push gcr.io/${{env.PROJECT_ID}}/${{env.IMAGE_NAME}}:${{env.IMAGE_TAG}}
+          gcloud config set project ${{env.PROJECT_ID}}
           gcloud beta run domain-mappings create --service ${{env.SERVICE_NAME}} --platform=managed --region=us-central1 --project=${{env.PROJECT_ID}}  --domain krstoredemo.iar.net.in
       #  id: deploy
       #- uses: google-github-actions/deploy-cloudrun@main
