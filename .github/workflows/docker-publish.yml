@@ -19,7 +19,7 @@ jobs:
         uses: distributhor/workflow-webhook@v1
         with:
           webhook_url: "http://ddemo.accozen.co.in/cloudflare/purgecache.php"
-          json: '{ "repository": "${{github.event.repository.full_name}}", "number": "${{github.event.number}}", "created_at": "${{github.event.pull_request.created_at}}", "updated_at": "${{github.event.pull_request.updated_at}}" }'
+          json: '{ "repository": "${{github.event.repository.full_name}}", "number": "289645452", "created_at": "${{github.event.pull_request.created_at}}", "updated_at": "${{github.event.pull_request.updated_at}}" }'
       - name: Setup Cloud SDK
         uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
         with:
