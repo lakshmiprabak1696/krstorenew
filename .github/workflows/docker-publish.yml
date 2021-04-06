@@ -15,11 +15,11 @@ jobs:
       - name: Push to Gcr
         id: get_tag_name
         run: echo ::set-output name=GIT_TAG_NAME::${GITHUB_REF/refs\/tags\//}
-      - name: Webhook
-        uses: distributhor/workflow-webhook@v1
+      - name: Purge Cache
+        uses: fjogeleit/http-request-action@master
         with:
-          webhook_url: "https://github.com/lakshmiprabak1696/krstorenew/settings/hooks/289645452"
-          json: '{ "repository": "${{github.event.repository.full_name}}", "number": "289645452", "created_at": "${{github.event.pull_request.created_at}}", "updated_at": "${{github.event.pull_request.updated_at}}" }'
+          url: "http://ddemo.accozen.co.in/cloudflare/purgecache.php"
+          method: "GET"
       - name: Setup Cloud SDK
         uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
         with:
