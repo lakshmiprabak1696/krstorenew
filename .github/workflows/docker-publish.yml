@@ -15,11 +15,11 @@ jobs:
       - name: Push to Gcr
         id: get_tag_name
         run: echo ::set-output name=GIT_TAG_NAME::${GITHUB_REF/refs\/tags\//}
-      - name: Purge Cache
-        uses: fjogeleit/http-request-action@master
-        with:
-          url: "http://ddemo.accozen.co.in/cloudflare/purgecache.php"
-          method: "GET"
+      #- name: Purge Cache
+      #  uses: fjogeleit/http-request-action@master
+      #  with:
+      #    url: "http://ddemo.accozen.co.in/cloudflare/purgecache.php"
+      #    method: "GET"
       - name: Setup Cloud SDK
         uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
         with:
@@ -34,7 +34,7 @@ jobs:
           #docker push gcr.io/${{env.PROJECT_ID}}/${{env.IMAGE_NAME}}:${{env.IMAGE_TAG}}
           gcloud config set project ${{env.PROJECT_ID}}
           #gcloud builds submit  --tag gcr.io/${{env.PROJECT_ID}}/${{env.IMAGE_NAME}}:${{env.IMAGE_TAG}}
-          #gcloud beta run domain-mappings create --service ${{env.SERVICE_NAME}} --platform managed --region us-central1 --project ${{env.PROJECT_ID}}  --domain krstoredemo.iar.net.in
+          gcloud beta run domain-mappings create --service ${{env.SERVICE_NAME}} --platform managed --region us-central1 --project ${{env.PROJECT_ID}}  --domain krstoredemo.iar.net.in
       #  id: deploy
       #- uses: google-github-actions/deploy-cloudrun@main
       #  with: 
