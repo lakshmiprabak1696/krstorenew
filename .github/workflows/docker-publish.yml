@@ -6,7 +6,7 @@ env:
   PROJECT_ID: iamretailer-281612
   IMAGE_NAME: krstore
   IMAGE_TAG: 1.0.4
-  SERVICE_NAME: krstorebb1
+  SERVICE_NAME: krstorebb
 jobs:
   build:
     runs-on: ubuntu-latest
